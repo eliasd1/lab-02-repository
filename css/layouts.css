@@ -1,0 +1,28 @@
+header{
+    text-align: center;
+    padding:10px;
+}
+main{
+    width:960px;
+    margin:0 auto;
+    overflow:hidden;
+}
+section{
+    display:flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding:9px;
+    border:1px solid black;
+    height:400px;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+section>*{
+    box-sizing: border-box;
+    padding: 10px 0;
+}
+
+/* section:nth-child(5), section:nth-child(3n+2) {
+    clear: left;
+} */
