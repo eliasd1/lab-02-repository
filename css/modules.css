@@ -1,0 +1,14 @@
+header>*{
+    padding:5px;
+}
+.photo-template{
+    display:none;
+}
+section>img{
+    position: relative;
+    width:250px;
+    max-height:250px;
+}
+section>p{
+    width:300px;
+}
