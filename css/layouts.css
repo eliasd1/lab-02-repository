@@ -6,17 +6,21 @@ main{
     width:960px;
     margin:0 auto;
     overflow:hidden;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
 }
 section{
     display:flex;
     flex-direction: column;
     box-sizing: border-box;
-    padding:9px;
+    padding:4px;
     border:1px solid black;
     height:400px;
     justify-content: space-between;
     align-items: center;
     text-align: center;
+    margin:5px;
 }
 section>*{
     box-sizing: border-box;
