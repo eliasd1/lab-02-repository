@@ -4,6 +4,9 @@ header>*{
 .photo-template{
     display:none;
 }
+section>h2{
+    max-width:300px;
+}
 section>img{
     position: relative;
     width:250px;
