@@ -2,28 +2,29 @@
 var allData = [];
 const firstPageLink = "../data/page-1.json"
 const secondPageLink = "../data/page-2.json"
-function Data(image_url, title, description, keyword, horns){
-    this.image_url = image_url;
-    this.title = title;
-    this.description = description;
-    this.keyword = keyword;
-    this.horns = horns;
+function Data(item){
+    for(let key in item){
+        this[key] = item[key]
+    }
     allData.push(this);
 }
 Data.prototype.render = function(){
-    var $data = $(".photo-template").clone();
-    $("main").append($data);
-    $data.find("h2").text(this.title)
-    $data.find("img").attr("src", this.image_url)
-    $data.find("img").attr("alt", this.keyword)
-    $data.find("p").text(this.description)
-    $data.removeClass("photo-template")
+    // var $data = $(".photo-template").clone();
+    // $("main").append($data);
+    // $data.find("h2").text(this.title)
+    // $data.find("img").attr("src", this.image_url)
+    // $data.find("img").attr("alt", this.keyword)
+    // $data.find("p").text(this.description)
+    // $data.removeClass("photo-template")
+    
+    var template = $("#photo-template").html()
+    $("main").append(Mustache.render(template, this))
 }
 Data.prototype.readJSON = function(link){
     $.getJSON(link)
     .then(data =>{
         data.forEach(item =>{
-            new Data(item.image_url, item.title,item.description, item.keyword, item.horns).render();
+            new Data(item).render();
         })
         $("#selectKeyword").triggerHandler("change");
     })
