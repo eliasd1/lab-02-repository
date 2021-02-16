@@ -1,5 +1,7 @@
 'use strict'
 var allData = [];
+const firstPageLink = "../data/page-1.json"
+const secondPageLink = "../data/page-2.json"
 function Data(image_url, title, description, keyword, horns){
     this.image_url = image_url;
     this.title = title;
@@ -17,21 +19,23 @@ Data.prototype.render = function(){
     $data.find("p").text(this.description)
     $data.removeClass("photo-template")
 }
-Data.prototype.readJSON = function(){
-    $.getJSON("../data/page-1.json")
+Data.prototype.readJSON = function(link){
+    $.getJSON(link)
     .then(data =>{
         data.forEach(item =>{
             new Data(item.image_url, item.title,item.description, item.keyword, item.horns).render();
         })
+        $("#selectKeyword").triggerHandler("change");
     })
 }
 $(() =>{
-    Data.prototype.readJSON();
- 
+    displayImages(firstPageLink)
     $("#selectKeyword").on("change", function(){
+        console.log("Hello")
         $("section").show();
         var value = $(this).val();
         $("section").each(function(){
+            console.log(this)
             if($(this).find("img").attr("alt") !== value){
                 $(this).hide();
             }
@@ -41,7 +45,17 @@ $(() =>{
             $(".photo-template").hide();
         }
     })
+    $("#pageNumber").on("change", function(){
+        if($(this).val() === "2"){
+            $(".photo-template").siblings().remove();
+            displayImages(secondPageLink)
+        } else{
+            $(".photo-template").siblings().remove();
+            displayImages(firstPageLink) 
+        }
+    })
     $("#sort").on("change", function(){
+        
         var sort = $(this).val();
         if(sort === "title"){
             $("section").slice(1).sort((a,b) =>{
@@ -70,7 +84,10 @@ $(() =>{
         }
         else{
             $("section").slice(1).remove()
-            Data.prototype.readJSON();
+            displayImages(firstPageLink)
         }
     })
 })
+function displayImages(page){
+    Data.prototype.readJSON(page);  
+}
