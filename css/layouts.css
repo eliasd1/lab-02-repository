@@ -26,7 +26,3 @@ section>*{
     box-sizing: border-box;
     padding: 10px 0;
 }
-
-/* section:nth-child(5), section:nth-child(3n+2) {
-    clear: left;
-} */

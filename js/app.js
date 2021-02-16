@@ -8,15 +8,7 @@ function Data(item){
     }
     allData.push(this);
 }
-Data.prototype.render = function(){
-    // var $data = $(".photo-template").clone();
-    // $("main").append($data);
-    // $data.find("h2").text(this.title)
-    // $data.find("img").attr("src", this.image_url)
-    // $data.find("img").attr("alt", this.keyword)
-    // $data.find("p").text(this.description)
-    // $data.removeClass("photo-template")
-    
+Data.prototype.render = function(){    
     var template = $("#photo-template").html()
     $("main").append(Mustache.render(template, this))
 }
