@@ -1,7 +1,7 @@
 'use strict'
 var allData = [];
 const firstPageLink = "./data/page-1.json"
-const secondPageLink = "./data/page-2.json"
+const secondPageLink = "/data/page-2.json"
 function Data(item){
     for(let key in item){
         this[key] = item[key]
