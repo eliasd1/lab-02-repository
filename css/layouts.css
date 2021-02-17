@@ -1,11 +1,16 @@
+
 header{
     text-align: center;
-    padding:10px;
+    padding:2%;
+        
 }
+/* header>section{
+    display:flex;
+    justify-content: space-between;
+} */
 main{
-    width:960px;
+    max-width:960px;
     margin:0 auto;
-    overflow:hidden;
     display:flex;
     flex-wrap:wrap;
     justify-content: space-around;
@@ -14,15 +19,31 @@ section{
     display:flex;
     flex-direction: column;
     box-sizing: border-box;
-    padding:4px;
-    border:1px solid black;
-    height:400px;
+    padding:1.5rem;
+    border:0.0025em solid black;
+    height:40vh;
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    margin:5px;
+    margin:1%;
 }
-section>*{
-    box-sizing: border-box;
-    padding: 10px 0;
+
+@media(min-width:480px){
+    main{
+        flex-direction: column;
+    }
+}
+@media(min-width:720px){
+    main{
+        flex-direction: row;
+        justify-content: center;
+    }
+    section{
+        width:40vw;
+    }
+}
+@media(min-width:960px){
+    section{
+        width:30%;
+    }
 }
