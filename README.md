@@ -53,3 +53,11 @@ Estimate of time needed to complete: 30 minutes
 Start time:2:50PM
 Finish time:3:00PM
 Actual time needed to complete: 10 minutes
+
+## Lab-04
+
+Number and name of feature:#1 Responsive design
+Estimate of time needed to complete: 1 hour
+Start time:2:00PM
+Finish time:2:45PM
+Actual time needed to complete: 45 minutes

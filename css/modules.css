@@ -1,17 +1,40 @@
 header>*{
-    padding:5px;
+    padding:0.5em;
+}
+header>select{
+    border: 0.0025em solid black;
 }
 .photo-template{
     display:none;
 }
+section>*{
+    box-sizing: border-box;
+    padding: 2% 0;
+}
 section>h2{
-    max-width:300px;
+    max-width:100%;
 }
 section>img{
     position: relative;
-    width:250px;
-    max-height:250px;
+    max-width:100%;
+    max-height:75%;
 }
 section>p{
-    width:300px;
+    max-width:100%;
 }
+
+@media(min-width:480px){
+    header>select{
+        display:block;
+        width:50%;
+        margin: 2% auto;
+        text-align:center;
+    }
+ }
+ @media(min-width:720px){
+    header>select{
+        width:auto;
+        display:inline-block;
+        margin:0.5%;
+    }
+ }
